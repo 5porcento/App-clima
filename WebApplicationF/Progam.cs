@@ -20,7 +20,7 @@ app.UseCors("AllowSpecificOrigin");
 
 app.MapGet("/weather", async (IHttpClientFactory clientFactory, double lat = -0.1257, double lon =50.51085) =>
 {
-    string apiKey = "xxxxxxxxxxxxxxxxxxxxxxx";
+    string apiKey = "xxxxxxxxxxxxxxxxx-yyyyyyyy";
     string url = $"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={apiKey}&units=metric&lang=pt_br";
 
     var client = clientFactory.CreateClient();

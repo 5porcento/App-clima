@@ -4,7 +4,7 @@ function Weather() {
     const [weather, setWeather] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:5084/weather?lat=43.0004&lon=-75.4999')
+        fetch('http://localhost:5084/weather?lat=-8.2578&lon=-49.2647')
             .then(response => response.json())
             .then(data => setWeather(data))
             .catch(error => console.error("Erro ao buscar dados meteorológicos:", error));
@@ -14,7 +14,7 @@ function Weather() {
         justifyContent: 'center',
         alignItems: 'center',
         height: '100vh',
-        backgroundColor: '#ADD8E6', // Cor de fundo azul claro
+        backgroundColor: '#ADD8E6', 
     };
 
     const weatherStyle = {
@@ -64,6 +64,7 @@ function Weather() {
                     <h1 style={titleStyle}>Condições Meteorológicas</h1>
                     <p>Temperatura: {weather.temperatura}°C</p>
                     <p>Condição: {weather.condição} {getWeatherEmoji(weather.condição)}</p>
+                    <p>Cidade: Redenção</p>
                 </div>
             ) : (
                 <p style={loadingStyle}>Carregando dados meteorológicos...</p>
